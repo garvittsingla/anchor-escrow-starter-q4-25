@@ -54,6 +54,7 @@ pub struct Take<'info> {
         close = taker,
         has_one = mint_a,
         has_one = maker,
+        has_one = mint_b, //just a check to be more safe otherwise user can send some other account or something else
         seeds = [b"escrow", maker.key().as_ref(), &escrow.seed.to_le_bytes()],
         bump = escrow.bump
     )]
